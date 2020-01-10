@@ -1,7 +1,7 @@
 <template>
 	<nav>
 		<v-toolbar flat app>
-			<v-toolbar-side-icon class="grey--text" @click="drawer = !drawer"><v-icon>menu</v-icon></v-toolbar-side-icon>
+			<v-app-bar-nav-icon class="grey--text" @click="drawer = !drawer"><v-icon>menu</v-icon></v-app-bar-nav-icon>
 			<v-toolbar-title class="text-uppercase grey--text">
 				<span class="font-weight-light">Project</span>
 				<span>Management</span>
@@ -9,7 +9,7 @@
 			<v-spacer></v-spacer>
 			<v-btn flat color="grey">
 				<span>Sign Out</span>
-				<v-icon right>arrow_downward</v-icon>
+				<v-icon right>exit_to_app</v-icon>
 			</v-btn>
 		</v-toolbar>
 
@@ -20,6 +20,9 @@
 						<img src="/avatar-1.png" alt="">
 					</v-avatar>
 					<p class="white--text subheading mt-1">Philippe Mallari</p>
+				</v-flex>
+				<v-flex class="mt-4 mb-3">
+					<Popup />
 				</v-flex>
 			</v-layout>
 			<v-list>
@@ -39,7 +42,9 @@
 
 
 <script>
+	import Popup from './Popup'
 	export default {
+		components : { Popup },
 		data() {
 			return {
 				drawer: false,
